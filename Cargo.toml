@@ -1,0 +1,21 @@
+[workspace]
+members = ["runtime_macros"]
+
+[package]
+name = "runtime"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[example]]
+name = "sender"
+
+[[example]]
+name = "receiver"
+
+[dependencies]
+futures = "0.3.28"
+mio = { version = "0.8.8", features = ["net", "os-poll"] }
+runtime_macros = { path = "runtime_macros" }
+libc = "0.2.148"
